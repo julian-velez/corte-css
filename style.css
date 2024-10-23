@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111;
+    margin: 0;
+}
+
+.chop-container {
+    position: relative;
+    font-size: 150px; /* Aumenta el tamaño del texto */
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}
+
+.chop {
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+/* Parte superior cortada */
+.chop::before {
+    content: "Chop!";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    color: #ff00ff; /* Color neón de la parte superior */
+    transform: translateY(-15px) rotate(-5deg);
+    z-index: -1;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+}
+
+/* Parte inferior cortada */
+.chop::after {
+    content: "Chop!";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    color: #00ffff; /* Color neón de la parte inferior */
+    transform: translateY(15px) rotate(5deg);
+    z-index: -1;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+}
